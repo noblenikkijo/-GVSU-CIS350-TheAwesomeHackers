@@ -1,4 +1,4 @@
-# Team Name
+# The Awesome Hackers
 
 Project description (~1 paragraph)
 
