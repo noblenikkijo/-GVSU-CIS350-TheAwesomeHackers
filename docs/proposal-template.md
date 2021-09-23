@@ -9,7 +9,7 @@ Team members: Nikki Noble, Zoe Oliver, Ian Malinowski, Natalie Kline
 
 # Anticipated Technologies
 
-Java as a programming language, GIT as out repository, and HTML for creating the website.
+Java as a programming language, GIT as our repository, and HTML for creating the website.
 
 # Method/Approach
 
