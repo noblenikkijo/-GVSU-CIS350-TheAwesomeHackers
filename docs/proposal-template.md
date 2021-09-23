@@ -9,16 +9,19 @@ Team members: Nikki Noble, Zoe Oliver, Ian Malinowski, Natalie Kline
 
 # Anticipated Technologies
 
-(What technologies are needed to build this project)
+Java as a programming language, GIT as out repository, and HTML for creating the website.
 
 # Method/Approach
 
-(What is your estimated "plan of attack" for developing this project)
+We plan on conducting research on how to create a virus, and infiltrating other devices. After we feel prepared enough we will remain in contact with thr group in order to deligate tasks and set up meeting to review completed work. We plan on conducting our project as a team utilizing the Agile Method
 
 # Estimated Timeline
 
-(Figure out what your major milestones for this project will be, including how long you anticipate it *may* take to reach that point)
+Requirment Analysis and Planning: A week
+Design: 2 weeks
+Coding: a month
+Testing: 2 weeks
 
 # Anticipated Problems
 
-(Describe any problems you foresee that you will need to overcome)
+Learning and/or refreshing our knowledge of HTML
