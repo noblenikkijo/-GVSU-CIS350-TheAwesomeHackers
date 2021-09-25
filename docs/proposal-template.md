@@ -19,8 +19,11 @@ We plan on conducting research on how to create a virus and infiltrating other d
 # Estimated Timeline
 
 Requirment Analysis & Planning: A Week
+
 Design: 2 Weeks
+
 Coding: A Month
+
 Testing: 2 Weeks
 
 # Anticipated Problems
