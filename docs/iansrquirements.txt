@@ -1,0 +1,10 @@
+Functional requirements  
+	A UBS drive shall be used to gain access to the target’s computer.
+	After the UBS drive is removed the program shall still run on the computer. 
+	The program shall change the system volume to maximum when the web domain is opened.
+	The program shall prevent the user/target from turning off the volume. 
+Nonfunctional 
+	The program shall not store any personal information of the user.
+	The Phishing email shall look like it is from a legitimate source.
+	The user shall not be able to close the web domain after its opened.
+						
