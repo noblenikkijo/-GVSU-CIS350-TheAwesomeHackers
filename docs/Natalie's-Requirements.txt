@@ -1,9 +1,0 @@
-## Functional: 
-* The background color for the display once the link is clicked shall be black with a hexadecimal RGB color value of 000000.
-* The software system should utilize an interactive GUI that is the backbone of the phishing. 
-* The user shall not kill the program until the kill switch, typing in the terminal, has been activated.
-
-## Non-Functional: 
-* The software shall be portable so moving from one OS to another OS does not create any problem, mac versus windows.
-* The problem shall turn on the user’s camera and microphone once the phishing link has been clicked. 
-* The program shall prevent user access from their system. 
