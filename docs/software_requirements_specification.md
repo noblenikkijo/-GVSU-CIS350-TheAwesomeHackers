@@ -41,11 +41,11 @@ This is The Awesome Hacker's Software Requirements Specification divided up by s
 
 3. HTML
     1. The program shall re-direct the user to a designated web domain whenever a new tab is created/opened
-    2. the user shall not be able to close the web domain after it is opened.
+    2. The user shall not be able to close the web domain after it is opened.
     3. The program shall be capable of handling up to 3 users without affecting performance.
 
 4. General Program
-    1. the program shall not steal any personal of the user.
+    1. The program shall not steal any personal of the user.
     2. The program will not cause any harm or changes to the users system.
 
  
