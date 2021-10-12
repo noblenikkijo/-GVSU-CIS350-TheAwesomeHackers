@@ -13,9 +13,7 @@ This is The Awesome Hacker's Software Requirements Specification divided up by s
 2. Phishing Attack
 
 3. HTML
-    1. The program shall utilize HTML. 
-    2. The program shall utilize CSS for design.
-    3. Only developers shall have the right to view user video and audio recorded by the program.
+    1. Only developers shall have the right to view user video and audio recorded by the program.
 
 4. General Program
     1. The program shall utilize the java language
