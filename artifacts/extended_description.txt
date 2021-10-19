@@ -1,0 +1,9 @@
+Use Case: GUI Display
+
+Actors: User, Website, & USB
+ 
+Description: The user will be interacting with either the website or the usb which will contain the phishing link. Once the phishing link has been clicked on or the usb has been inserted, the user will then interact with the GUI which is a display that will appear on the screen. This display with be a black screen as a background and including white text. The user will continue to interact with this GUI until they activate the kill switch in which the "attack" is then over. 
+
+Cross Ref.: GUI Requirements, both functional and non-functional are all assocaited. 
+
+Use-Cases: The user must have the completed the permissions use-case. 
