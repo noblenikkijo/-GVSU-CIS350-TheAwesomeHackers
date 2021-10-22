@@ -33,7 +33,7 @@
 ## Estimated Time:
 		2 weeks
 ## Responsible:
-		Ian Malinowski?
+		Nikki Noble
 
 ## Name:
 		Create End Process
