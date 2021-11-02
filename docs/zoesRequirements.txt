@@ -4,4 +4,4 @@ FR3: The website shall utilize CSS for design.
 
 NFR1: The website shall be capable of handling up to 3 users without affecting performance.
 NFR2: The program shall be adaptable to various sizes of computer screen.
-NFR3: The program shall not cause any harm or long term changes to the users system.
+NFR3: The program shall not cause any harm or long term changes to the users system..
