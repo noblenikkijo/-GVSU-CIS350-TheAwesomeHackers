@@ -1,0 +1,140 @@
+<VideoGUI html>
+    <html lang="en">
+    <head>
+    <style>
+            body{ 
+                background-image: url('https://thumbs.dreamstime.com/b/cyber-attack-hacked-digital-background-green-matrix-binary-computer-code-computer-screen-error-templates-cyber-attack-hacked-146296661.jpg'); 
+                height: 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+            }
+    </style>
+        <meta charset="UTF-8">
+        <title>MediaCapture and Streams API</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header>
+            <h1 style="color: white">You Are Being Recorded</h1>
+        </header>
+        <main>
+            <p style="color: white">In order to close the program you must meet our next demand </p>
+            <p style="color: white">We have a script prepared for you. Record a video of you singing the script below </p>
+            <p style="color: white">Here is what you need to say...</p>
+            <p style="padding: 10px; border: 2px solid white">Never gonna give you up
+                Never gonna let you down
+                Never gonna run around and desert you
+                Never gonna make you cry
+                Never gonna say goodbye
+                Never gonna tell a lie and hurt you</p>
+    
+            <p><button id="btnStart">START RECORDING</button><br/>
+            <button id="btnStop">STOP RECORDING</button></p>
+            
+            <video controls></video>
+            
+            <video id="vid2" controls></video>
+            
+            <!-- could save to canvas and do image manipulation and saving too -->
+        </main>    
+        <script>
+            
+            let constraintObj = { 
+                audio: true, 
+                video: { 
+                    facingMode: "user", 
+                    width: { min: 640, ideal: 1280, max: 1920 },
+                    height: { min: 480, ideal: 720, max: 1080 } 
+                } 
+            }; 
+            // width: 1280, height: 720  -- preference only
+            // facingMode: {exact: "user"}
+            // facingMode: "environment"
+            
+            //handle older browsers that might implement getUserMedia in some way
+            if (navigator.mediaDevices === undefined) {
+                navigator.mediaDevices = {};
+                navigator.mediaDevices.getUserMedia = function(constraintObj) {
+                    let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+                    if (!getUserMedia) {
+                        return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+                    }
+                    return new Promise(function(resolve, reject) {
+                        getUserMedia.call(navigator, constraintObj, resolve, reject);
+                    });
+                }
+            }else{
+                navigator.mediaDevices.enumerateDevices()
+                .then(devices => {
+                    devices.forEach(device=>{
+                        console.log(device.kind.toUpperCase(), device.label);
+                        //, device.deviceId
+                    })
+                })
+                .catch(err=>{
+                    console.log(err.name, err.message);
+                })
+            }
+    
+            navigator.mediaDevices.getUserMedia(constraintObj)
+            .then(function(mediaStreamObj) {
+                //connect the media stream to the first video element
+                let video = document.querySelector('video');
+                if ("srcObject" in video) {
+                    video.srcObject = mediaStreamObj;
+                } else {
+                    //old version
+                    video.src = window.URL.createObjectURL(mediaStreamObj);
+                }
+                
+                video.onloadedmetadata = function(ev) {
+                    //show in the video element what is being captured by the webcam
+                    video.play();
+                };
+                
+                //add listeners for saving video/audio
+                let start = document.getElementById('btnStart');
+                let stop = document.getElementById('btnStop');
+                let vidSave = document.getElementById('vid2');
+                let mediaRecorder = new MediaRecorder(mediaStreamObj);
+                let chunks = [];
+                
+                start.addEventListener('click', (ev)=>{
+                    mediaRecorder.start();
+                    console.log(mediaRecorder.state);
+                })
+                stop.addEventListener('click', (ev)=>{
+                    mediaRecorder.stop();
+                    console.log(mediaRecorder.state);
+                });
+                mediaRecorder.ondataavailable = function(ev) {
+                    chunks.push(ev.data);
+                }
+                mediaRecorder.onstop = (ev)=>{
+                    let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+                    chunks = [];
+                    let videoURL = window.URL.createObjectURL(blob);
+                    vidSave.src = videoURL;
+                }
+            })
+            .catch(function(err) { 
+                console.log(err.name, err.message); 
+            });
+            
+            /*********************************
+            getUserMedia returns a Promise
+            resolve - returns a MediaStream Object
+            reject returns one of the following errors
+            AbortError - generic unknown cause
+            NotAllowedError (SecurityError) - user rejected permissions
+            NotFoundError - missing media track
+            NotReadableError - user permissions given but hardware/OS error
+            OverconstrainedError - constraint video settings preventing
+            TypeError - audio: false, video: false
+            *********************************/
+        </script>
+    </body>
+    </html>
