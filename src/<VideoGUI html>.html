@@ -10,6 +10,24 @@
                 background-position: center;
                 background-size: cover;
             }
+            .popup .popuptext {
+                visibility: hidden;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 100px;
+                padding: 8px 0;
+                z-index: 100;
+                position: fixed top;
+                margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .popup .show {
+                visibility: visible;
+                width: 100%;
+                display: block;
+            }
     </style>
         <meta charset="UTF-8">
         <title>MediaCapture and Streams API</title>
@@ -50,13 +68,19 @@
             <br />
     </center>
     <center> 
-        <button style= "font-size: 25px; 
-        background-color: red;
-        color: black;
-        font-weight: bold"
-        id="btnStop"</button>KILL SWITCH</button></p>
-        <iframe id="video1" width="520" height="360" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-        <a href="#" id="playvideo">Play video</a>
+                
+        <div class="popup" >
+            <button onclick="myFunction()" onclick="myFunction(mediaRecorder.stop)"style= "font-size: 25px; 
+                            margin : 0 auto;
+                            background-color: red;
+                            color: black;
+                            font-weight: bold"
+            id="btnStop"</button>KILL SWITCH</button>
+            <video width = "800" height= "400" class="popuptext" id="myPopup" style="width:800px; " controls autoplay >
+            <source src="rickroll.mp4" type="video/mp4">
+            </video>
+        </div>
+        
     </center>
             
             <!-- could save to canvas and do image manipulation and saving too -->
@@ -80,7 +104,16 @@
             requestFullScreen(elem);
             /* Get the element you want displayed in fullscreen mode (a video in this example): */
            
-            
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+                if (popup.paused){ 
+                popup.play(); 
+                }
+                else{ 
+                 popup.pause();
+                }
+            }
         
             btnStop.style.height = '75px'
             btnStop.style.width = '200px'
@@ -156,12 +189,6 @@
                 
                 
                 stop.addEventListener('click', (ev)=>{
-                    $("#playvideo").one(function(){
-                     //as noted in addendum, check for querystring exitence
-                     var symbol = $("#video1")[0].src.indexOf("?") > -1 ? "&" : "?";
-                     //modify source to autoplay and start video
-                     $("#video1")[0].src += symbol + "autoplay=1";
-                 });
                     mediaRecorder.stop();
                     //something.close();
                     console.log(mediaRecorder.state);
