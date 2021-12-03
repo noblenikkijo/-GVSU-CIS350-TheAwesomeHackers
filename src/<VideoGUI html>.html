@@ -3,7 +3,7 @@
     <head>
     <style>
             body{ 
-                background-image: url('https://thumbs.dreamstime.com/b/cyber-attack-hacked-digital-background-green-matrix-binary-computer-code-computer-screen-error-templates-cyber-attack-hacked-146296661.jpg'); 
+                background-image: url('https://wallpaperaccess.com/full/268067.jpg'); 
                 height: 100%;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -18,36 +18,84 @@
     </head>
     <body>
         <header>
-            <h1 style="color: white">You Are Being Recorded</h1>
+            <h1 style="color: white; text-align: center; font-size: 100px ">YOU ARE BEING RECORDED!</h1>
         </header>
         <main>
-            <p style="color: white">In order to close the program you must meet our next demand </p>
-            <p style="color: white">We have a script prepared for you. Record a video of you singing the script below </p>
-            <p style="color: white">Here is what you need to say...</p>
-            <p style="padding: 10px; border: 2px solid white">Never gonna give you up
+            <p style="color: white; text-align: center; font-size: 30px">In order to close the program you must meet our next demand
+                <br />
+                <br />We have a script prepared for you. Record a video of you singing the script below
+                <br />
+                <br />Here is what you need to say...</p>
+            <p style="text-align: center;
+                    font-size: 20px;
+                    margin: 0 auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                    color: green;
+                    padding: 10px; 
+                    width: 500px;
+                    background-color: white;
+                    border: 2px solid white">Here is what you need to say...<br />
+                    <br />
+                Never gonna give you up
                 Never gonna let you down
                 Never gonna run around and desert you
                 Never gonna make you cry
                 Never gonna say goodbye
                 Never gonna tell a lie and hurt you</p>
-    
-            <p><button id="btnStart">START RECORDING</button><br/>
-            <button id="btnStop">STOP RECORDING</button></p>
-            
-            <video controls></video>
-            
-            <video id="vid2" controls></video>
+
+    <center>
+            <video controls></video> 
+            <br />
+            <br />
+    </center>
+    <center> 
+        <button style= "font-size: 25px; 
+        background-color: red;
+        color: black;
+        font-weight: bold"
+        id="btnStop"</button>KILL SWITCH</button></p>
+        <iframe id="video1" width="520" height="360" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+        <a href="#" id="playvideo">Play video</a>
+    </center>
             
             <!-- could save to canvas and do image manipulation and saving too -->
         </main>    
         <script>
+            function requestFullScreen(element) {
+                 
+                 var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+                if (requestMethod) { // Native full screen.
+                    requestMethod.call(element);
+                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                    var wscript = new ActiveXObject("WScript.Shell");
+                     if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                    }
+             }
+            }
+
+            var elem = document.body; // Make the body go full screen.
+            requestFullScreen(elem);
+            /* Get the element you want displayed in fullscreen mode (a video in this example): */
+           
             
+        
+            btnStop.style.height = '75px'
+            btnStop.style.width = '200px'
+            btnStop.style.fontsize = '90px'
+            btnStop.style.fontweight = 'bold'
+            btnStop.style.fontcolor = 'red'
+
+
             let constraintObj = { 
                 audio: true, 
                 video: { 
                     facingMode: "user", 
                     width: { min: 640, ideal: 1280, max: 1920 },
-                    height: { min: 480, ideal: 720, max: 1080 } 
+                    height: { min: 480, ideal: 720, max: 1080 } ,
+                     
                 } 
             }; 
             // width: 1280, height: 720  -- preference only
@@ -93,21 +141,29 @@
                 video.onloadedmetadata = function(ev) {
                     //show in the video element what is being captured by the webcam
                     video.play();
+                
+                mediaRecorder.start();
+                console.log(mediaRecorder.state);
                 };
                 
                 //add listeners for saving video/audio
-                let start = document.getElementById('btnStart');
+                
                 let stop = document.getElementById('btnStop');
                 let vidSave = document.getElementById('vid2');
                 let mediaRecorder = new MediaRecorder(mediaStreamObj);
                 let chunks = [];
                 
-                start.addEventListener('click', (ev)=>{
-                    mediaRecorder.start();
-                    console.log(mediaRecorder.state);
-                })
+                
+                
                 stop.addEventListener('click', (ev)=>{
+                    $("#playvideo").one(function(){
+                     //as noted in addendum, check for querystring exitence
+                     var symbol = $("#video1")[0].src.indexOf("?") > -1 ? "&" : "?";
+                     //modify source to autoplay and start video
+                     $("#video1")[0].src += symbol + "autoplay=1";
+                 });
                     mediaRecorder.stop();
+                    //something.close();
                     console.log(mediaRecorder.state);
                 });
                 mediaRecorder.ondataavailable = function(ev) {
@@ -123,18 +179,7 @@
             .catch(function(err) { 
                 console.log(err.name, err.message); 
             });
-            
-            /*********************************
-            getUserMedia returns a Promise
-            resolve - returns a MediaStream Object
-            reject returns one of the following errors
-            AbortError - generic unknown cause
-            NotAllowedError (SecurityError) - user rejected permissions
-            NotFoundError - missing media track
-            NotReadableError - user permissions given but hardware/OS error
-            OverconstrainedError - constraint video settings preventing
-            TypeError - audio: false, video: false
-            *********************************/
+        
         </script>
     </body>
     </html>
