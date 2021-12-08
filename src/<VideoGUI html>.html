@@ -24,6 +24,19 @@
                 background-position: center;
                 background-size: cover;
             }
+            #msg{
+              display: none;
+              background-color: black;
+              background-size: cover;
+                height: 100%;
+                overflow: hidden;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                margin:0px;
+                height:100vh;
+            }
+            
             h1{
                 font-size: 2.7em;
                 background-color: rgba(255, 255, 255, .2);
@@ -78,7 +91,6 @@
                         document.getElementById('giveaway').style.display = 'block';
                         document.getElementById('hack').style.display = 'none';
                         document.getElementById("hack").style.backgroundImage = "url('https://wallpaperaccess.com/full/268067.jpg')";
-                        //$("body").css("background", "");
                     }
                     else {
                         document.getElementById('giveaway').style.display = 'none';
@@ -86,9 +98,30 @@
                     }
                 }
             }
+
+            function hideAll() {
+                
+                if (document.getElementById('button')) {
+                    if (document.getElementById('giveaway').style.display == 'none') {
+                        document.getElementById('giveaway').style.display = 'none';
+                        document.getElementById('hack').style.display = 'none';
+                        document.getElementById("hack").style.backgroundImage = "url('https://wallpaperaccess.com/full/268067.jpg')";
+                        //$("body").css("background", "");
+                    }
+                    else {
+                        document.getElementById('giveaway').style.display = 'none';
+                        document.getElementById('hack').style.display = 'none';
+                    }
+                }
+            }
         </script>
     </head>
     <body>
+        <div id="msg">
+        <h1>NEXT TIME DON'T FALL FOR PHISHING LINKS!</h1>
+        <h3 style="color: white; margin: 0 auto; text-align: center">Hit the power button in the bottom right to escape</h3>
+        <h3 style="color: white; margin: 0 auto; text-align: center">Password: thisTeamGetsAnA</h3>
+        </div>
         <div id="giveaway">
         <form id="register" method="get" action="localConfirm.html">
             <h1>CyberProtect Giveaway!</h1>
@@ -161,6 +194,7 @@
                 <br />
                 <br />
         </center>
+        
         <center> 
                     
             <div class="popup" >
@@ -170,7 +204,8 @@
                                 color: black;
                                 font-weight: bold"
                 id="btnStop"</button>KILL SWITCH</button>
-                <video width = "800" height= "400" class="popuptext" id="myPopup" style="width:800px; " controls autoplay >
+                <span id='jump_to_this_location'></span>
+                <video position = "fixed" right="0" bottom ="0" min-width="100%" min-height="100%" class="popuptext" id="myPopup" controls autoplay >
                 <source src="rickroll.mp4" type="video/mp4">
                 </video>
             </div>
@@ -199,6 +234,8 @@
                 /* Get the element you want displayed in fullscreen mode (a video in this example): */
                
                 function myFunction() {
+                    document.getElementById("jump_to_this_location").scrollIntoView({behavior: 'smooth'});
+                    
                     var popup = document.getElementById("myPopup");
                     popup.classList.toggle("show");
                     if (popup.paused){ 
@@ -208,7 +245,22 @@
                      popup.pause();
                      document.getElementsByClassName("popup").style.display = "none";
                     }
+                    setTimeout(function() {
+                    if (document.getElementById('button')) {
+                    if (document.getElementById('giveaway').style.display == 'none') {
+                        document.getElementById('giveaway').style.display = 'none';
+                        document.getElementById('hack').style.display = 'none';
+                        document.getElementById("hack").style.backgroundImage = "url('https://wallpaperaccess.com/full/268067.jpg')";
+                        document.getElementById('msg').style.display = 'block';
+                    }
+                    else {
+                        document.getElementById('giveaway').style.display = 'none';
+                        document.getElementById('hack').style.display = 'none';
+                    }
+                    }}, 9000);
+                    
                 }
+                
             
                 btnStop.style.height = '75px'
                 btnStop.style.width = '200px'
