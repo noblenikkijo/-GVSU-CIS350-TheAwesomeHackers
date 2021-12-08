@@ -12,3 +12,11 @@ Our intention with this project is to learn how to best defend against cyber sec
 ## Prerequisites
 
 ## Run Instructions
+* Install version based on your operating system at:
+    * https://safeexambrowser.org/download_en.html 
+* Open SEB Configuration Tool
+    * In general settings make “Start URL” this:
+        https://cyber-protect.neocities.org 
+    * Set unlock password to: thisTeamGetsAnA
+    * File -> Save Settings
+* Run Safe Exam Browse
