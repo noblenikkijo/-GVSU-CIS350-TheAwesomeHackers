@@ -1,212 +1,293 @@
-<VideoGUI html>
-    <html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
-    <style>
-            body{ 
-                background-image: url('https://wallpaperaccess.com/full/268067.jpg'); 
-                height: 100%;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-                background-size: cover;
-            }
-            .popup .popuptext {
-                visibility: hidden;
-                background-color: #555;
-                color: #fff;
-                text-align: center;
-                border-radius: 100px;
-                padding: 8px 0;
-                z-index: 100;
-                position: fixed top;
-                margin: 0 auto;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .popup .show {
-                visibility: visible;
-                width: 100%;
-                display: block;
-            }
-    </style>
         <meta charset="UTF-8">
-        <title>MediaCapture and Streams API</title>
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="main.css">
+        <title>Question Form</title>
+        <style>
+            body{
+                background-image: url('https://www.stockvault.net/data/2020/09/28/279232/preview16.jpg');
+                background-size: cover;
+                height: 100%;
+                overflow: hidden;
+                
+            }
+            h1{
+                font-size: 2.7em;
+                background-color: rgba(255, 255, 255, .2);
+                text-shadow: black 2px 2px;
+                text-align: center;
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                
+            }
+            h2{
+              color: darkslategray;
+            }
+            h3{
+              color: darkslategray; 
+            }
+            fieldset{
+                background-color: rgba(255, 255, 255, .5);
+                max-width: 1350px;
+                border: black 1.5px solid;
+            }
+            legend{
+                background-color: rgba(255, 255, 255, .8);
+                font-size: 1em;
+                padding: 5px;
+                border: black 2px solid;
+            }
+            #question{
+                width: 500px;
+                height: 20px;
+            }
+            button{
+                width: 150px;
+                height: 30px;
+                border: black 2px solid;
+                background-color: white;
+            }
+            /* div.hack{
+                display: none;
+                visibility: hidden;
+            } */
+            #hack{
+                display: none;
+            }
+        </style>
+        <script>
+            function switchVisible() {
+                
+                if (document.getElementById('button')) {
+                    if (document.getElementById('giveaway').style.display == 'none') {
+                        document.getElementById('giveaway').style.display = 'block';
+                        document.getElementById('hack').style.display = 'none';
+                    }
+                    else {
+                        document.getElementById('giveaway').style.display = 'none';
+                        document.getElementById('hack').style.display = 'block';
+                    }
+                }
+            }
+        </script>
     </head>
     <body>
-        <header>
-            <h1 style="color: white; text-align: center; font-size: 100px ">YOU ARE BEING RECORDED!</h1>
-        </header>
-        <main>
-            <p style="color: white; text-align: center; font-size: 30px">In order to close the program you must meet our next demand
-                <br />
-                <br />We have a script prepared for you. Record a video of you singing the script below
-                <br />
-                <br />Here is what you need to say...</p>
-            <p style="text-align: center;
-                    font-size: 20px;
-                    margin: 0 auto;
-                    margin-left: auto;
-                    margin-right: auto;
-                    color: green;
-                    padding: 10px; 
-                    width: 500px;
-                    background-color: white;
-                    border: 2px solid white">Here is what you need to say...<br />
-                    <br />
-                Never gonna give you up
-                Never gonna let you down
-                Never gonna run around and desert you
-                Never gonna make you cry
-                Never gonna say goodbye
-                Never gonna tell a lie and hurt you</p>
+        <div id="giveaway">
+        <form id="register" method="get" action="localConfirm.html">
+            <h1>CyberProtect Giveaway!</h1>
+            <fieldset>
+                <legend>Entry Details:</legend>
+                <div>
+                    <h2>You have the chance to win a full year of free full-service cybersecurtiy service!</h2>
+                    <h2>Fill out the following information to enter the CyberProtect giveaway.</h2>
+                    <h3>Max one entry per day</h3>
+                    <p>
+                        <label>First Name:</label>
+                        <input class="formEntry" id="firstName" name="firstName" type="text" placeholder="First Name Only" required autofocus>
+                    </p>
+                    <p>
+                        <label>Last Name:</label>
+                        <input class="formEntry" id="lastName" name="lastName" type="text" placeholder="Last Name Only" required>
+                    </p>
+                    <p>
+                        <label>Email:</label>
+                        <input class="formEntry" id="email" name="email" type="email" placeholder="example@domain.com" required>
+                    </p>
+                    <p>
+                            <label>Company:</label>
+                            <input class="formEntry" id="question" name="question" type="text" placeholder="Type 'Personal' if your are entering without a comapny affiliation" required>
+                    </p>
+                    
+                </div>
+            </fieldset>
+             
+             <div>
+                 <p style="margin-right: 4%;">
+                    <button id="button" class="inputButton" type="button" onclick="switchVisible();">Submit</button> 
+                    <button class="inputButton" id="reset" type="reset" value="Send Email" onclick="switchVisible()">Back</button>
+                </p>
+             </div>
+        </form>
 
-    <center>
-            <video controls></video> 
-            <br />
-            <br />
-    </center>
-    <center> 
-                
-        <div class="popup" >
-            <button onclick="myFunction()" onclick="myFunction(mediaRecorder.stop)"style= "font-size: 25px; 
-                            margin : 0 auto;
-                            background-color: red;
-                            color: black;
-                            font-weight: bold"
-            id="btnStop"</button>KILL SWITCH</button>
-            <video width = "800" height= "400" class="popuptext" id="myPopup" style="width:800px; " controls autoplay >
-            <source src="rickroll.mp4" type="video/mp4">
-            </video>
         </div>
-        
-    </center>
-            
-            <!-- could save to canvas and do image manipulation and saving too -->
-        </main>    
-        <script>
-            function requestFullScreen(element) {
-                 
-                 var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
 
-                if (requestMethod) { // Native full screen.
-                    requestMethod.call(element);
-                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-                    var wscript = new ActiveXObject("WScript.Shell");
-                     if (wscript !== null) {
-                    wscript.SendKeys("{F11}");
-                    }
-             }
-            }
-
-            var elem = document.body; // Make the body go full screen.
-            requestFullScreen(elem);
-            /* Get the element you want displayed in fullscreen mode (a video in this example): */
-           
-            function myFunction() {
-                var popup = document.getElementById("myPopup");
-                popup.classList.toggle("show");
-                if (popup.paused){ 
-                popup.play(); 
-                }
-                else{ 
-                 popup.pause();
-                }
-            }
-        
-            btnStop.style.height = '75px'
-            btnStop.style.width = '200px'
-            btnStop.style.fontsize = '90px'
-            btnStop.style.fontweight = 'bold'
-            btnStop.style.fontcolor = 'red'
-
-
-            let constraintObj = { 
-                audio: true, 
-                video: { 
-                    facingMode: "user", 
-                    width: { min: 640, ideal: 1280, max: 1920 },
-                    height: { min: 480, ideal: 720, max: 1080 } ,
-                     
-                } 
-            }; 
-            // width: 1280, height: 720  -- preference only
-            // facingMode: {exact: "user"}
-            // facingMode: "environment"
-            
-            //handle older browsers that might implement getUserMedia in some way
-            if (navigator.mediaDevices === undefined) {
-                navigator.mediaDevices = {};
-                navigator.mediaDevices.getUserMedia = function(constraintObj) {
-                    let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-                    if (!getUserMedia) {
-                        return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
-                    }
-                    return new Promise(function(resolve, reject) {
-                        getUserMedia.call(navigator, constraintObj, resolve, reject);
-                    });
-                }
-            }else{
-                navigator.mediaDevices.enumerateDevices()
-                .then(devices => {
-                    devices.forEach(device=>{
-                        console.log(device.kind.toUpperCase(), device.label);
-                        //, device.deviceId
-                    })
-                })
-                .catch(err=>{
-                    console.log(err.name, err.message);
-                })
-            }
+        <div id="hack">
+            <header>
+                <h1 style="color: white; text-align: center; font-size: 100px ">YOU ARE BEING RECORDED!</h1>
+            </header>
+            <main>
+                <p style="color: white; text-align: center; font-size: 30px">In order to close the program you must meet our next demand
+                    <br />
+                    <br />We have a script prepared for you. Record a video of you singing the script below
+                    <br />
+                    <br />Here is what you need to say...</p>
+                <p style="text-align: center;
+                        font-size: 20px;
+                        margin: 0 auto;
+                        margin-left: auto;
+                        margin-right: auto;
+                        color: green;
+                        padding: 10px; 
+                        width: 500px;
+                        background-color: white;
+                        border: 2px solid white">Here is what you need to say...<br />
+                        <br />
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you</p>
     
-            navigator.mediaDevices.getUserMedia(constraintObj)
-            .then(function(mediaStreamObj) {
-                //connect the media stream to the first video element
-                let video = document.querySelector('video');
-                if ("srcObject" in video) {
-                    video.srcObject = mediaStreamObj;
-                } else {
-                    //old version
-                    video.src = window.URL.createObjectURL(mediaStreamObj);
+        <center>
+                <video controls></video> 
+                <br />
+                <br />
+        </center>
+        <center> 
+                    
+            <div class="popup" >
+                <button onclick="myFunction()" onclick="myFunction(mediaRecorder.stop)"style= "font-size: 25px; 
+                                margin : 0 auto;
+                                background-color: red;
+                                color: black;
+                                font-weight: bold"
+                id="btnStop"</button>KILL SWITCH</button>
+                <video width = "800" height= "400" class="popuptext" id="myPopup" style="width:800px; " controls autoplay >
+                <source src="rickroll.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+        </center>
+                
+                <!-- could save to canvas and do image manipulation and saving too -->
+            </main>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+            </script>    
+            <script>
+                function requestFullScreen(element) {
+                     
+                     var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+    
+                    if (requestMethod) { // Native full screen.
+                        requestMethod.call(element);
+                    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                        var wscript = new ActiveXObject("WScript.Shell");
+                         if (wscript !== null) {
+                        wscript.SendKeys("{F11}");
+                        }
+                 }
                 }
-                
-                video.onloadedmetadata = function(ev) {
-                    //show in the video element what is being captured by the webcam
-                    video.play();
-                
-                mediaRecorder.start();
-                console.log(mediaRecorder.state);
-                };
-                
-                //add listeners for saving video/audio
-                
-                let stop = document.getElementById('btnStop');
-                let vidSave = document.getElementById('vid2');
-                let mediaRecorder = new MediaRecorder(mediaStreamObj);
-                let chunks = [];
-                
-                
-                
-                stop.addEventListener('click', (ev)=>{
-                    mediaRecorder.stop();
-                    //something.close();
-                    console.log(mediaRecorder.state);
-                });
-                mediaRecorder.ondataavailable = function(ev) {
-                    chunks.push(ev.data);
+    
+                var elem = document.body; // Make the body go full screen.
+                requestFullScreen(elem);
+                /* Get the element you want displayed in fullscreen mode (a video in this example): */
+               
+                function myFunction() {
+                    var popup = document.getElementById("myPopup");
+                    popup.classList.toggle("show");
+                    if (popup.paused){ 
+                    popup.play(); 
+                    }
+                    else{ 
+                     popup.pause();
+                     document.getElementsByClassName("popup").style.display = "none";
+                    }
                 }
-                mediaRecorder.onstop = (ev)=>{
-                    let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
-                    chunks = [];
-                    let videoURL = window.URL.createObjectURL(blob);
-                    vidSave.src = videoURL;
+            
+                btnStop.style.height = '75px'
+                btnStop.style.width = '200px'
+                btnStop.style.fontsize = '90px'
+                btnStop.style.fontweight = 'bold'
+                btnStop.style.fontcolor = 'red'
+    
+                let constraintObj = { 
+                    audio: true, 
+                    video: { 
+                        facingMode: "user", 
+                        width: { min: 640, ideal: 1280, max: 1920 },
+                        height: { min: 480, ideal: 720, max: 1080 } ,
+                         
+                    } 
+                }; 
+                // width: 1280, height: 720  -- preference only
+                // facingMode: {exact: "user"}
+                // facingMode: "environment"
+                
+                //handle older browsers that might implement getUserMedia in some way
+                if (navigator.mediaDevices === undefined) {
+                    navigator.mediaDevices = {};
+                    navigator.mediaDevices.getUserMedia = function(constraintObj) {
+                        let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+                        if (!getUserMedia) {
+                            return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+                        }
+                        return new Promise(function(resolve, reject) {
+                            getUserMedia.call(navigator, constraintObj, resolve, reject);
+                        });
+                    }
+                }else{
+                    navigator.mediaDevices.enumerateDevices()
+                    .then(devices => {
+                        devices.forEach(device=>{
+                            console.log(device.kind.toUpperCase(), device.label);
+                            //, device.deviceId
+                        })
+                    })
+                    .catch(err=>{
+                        console.log(err.name, err.message);
+                    })
                 }
-            })
-            .catch(function(err) { 
-                console.log(err.name, err.message); 
-            });
         
-        </script>
+                navigator.mediaDevices.getUserMedia(constraintObj)
+                .then(function(mediaStreamObj) {
+                    //connect the media stream to the first video element
+                    let video = document.querySelector('video');
+                    if ("srcObject" in video) {
+                        video.srcObject = mediaStreamObj;
+                    } else {
+                        //old version
+                        video.src = window.URL.createObjectURL(mediaStreamObj);
+                    }
+                    
+                    video.onloadedmetadata = function(ev) {
+                        //show in the video element what is being captured by the webcam
+                        video.play();
+                    
+                    mediaRecorder.start();
+                    console.log(mediaRecorder.state);
+                    };
+                    
+                    //add listeners for saving video/audio
+                    
+                    let stop = document.getElementById('btnStop');
+                    let vidSave = document.getElementById('vid2');
+                    let mediaRecorder = new MediaRecorder(mediaStreamObj);
+                    let chunks = [];
+                    
+                    
+                    
+                    stop.addEventListener('click', (ev)=>{
+                        mediaRecorder.stop();
+                        //something.close();
+                        console.log(mediaRecorder.state);
+                    });
+                    mediaRecorder.ondataavailable = function(ev) {
+                        chunks.push(ev.data);
+                    }
+                    mediaRecorder.onstop = (ev)=>{
+                        let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+                        chunks = [];
+                        let videoURL = window.URL.createObjectURL(blob);
+                        vidSave.src = videoURL;
+                    }
+                })
+
+                .catch(function(err) { 
+                    console.log(err.name, err.message); 
+                });
+
+            </script>
+        </div>
     </body>
-    </html>
+</html>
