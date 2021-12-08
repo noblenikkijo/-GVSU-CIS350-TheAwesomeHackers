@@ -4,12 +4,25 @@
         <meta charset="UTF-8">
         <title>Question Form</title>
         <style>
-            body{
+            #giveaway{
                 background-image: url('https://www.stockvault.net/data/2020/09/28/279232/preview16.jpg');
                 background-size: cover;
                 height: 100%;
                 overflow: hidden;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                margin:0px;
+                height:100vh;
                 
+            }
+            #hack{
+                background-image: url('https://wallpaperaccess.com/full/268067.jpg'); 
+                height: 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
             }
             h1{
                 font-size: 2.7em;
@@ -55,6 +68,8 @@
                 display: none;
             }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script> 
         <script>
             function switchVisible() {
                 
@@ -62,6 +77,8 @@
                     if (document.getElementById('giveaway').style.display == 'none') {
                         document.getElementById('giveaway').style.display = 'block';
                         document.getElementById('hack').style.display = 'none';
+                        document.getElementById("hack").style.backgroundImage = "url('https://wallpaperaccess.com/full/268067.jpg')";
+                        //$("body").css("background", "");
                     }
                     else {
                         document.getElementById('giveaway').style.display = 'none';
@@ -161,9 +178,7 @@
         </center>
                 
                 <!-- could save to canvas and do image manipulation and saving too -->
-            </main>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-            </script>    
+            </main>   
             <script>
                 function requestFullScreen(element) {
                      
