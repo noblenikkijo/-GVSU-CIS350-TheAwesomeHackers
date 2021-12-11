@@ -39,16 +39,18 @@ DELETE ME?
 
 2. Phishing Attack
     1. The attack shall be for educational purposes.
-    2. The website shall be accessed through a link
-    3. The email shall look like it is from a legitamate source.
+    2. The attack shall be a fake giveaway.
+    3. The website shall be accessed through a link.
+    4. The email shall look like it is from a legitamate source.
+    5. Proper attack simulation shall require downloading of the Safe Exam Browser.
 
 3. Cyber Protect Website
     1. Initial website view shall look like a legitamte giveaway.
-    1. The user shall not be able to close the web domain after it is opened.
-    2. The program shall be capable of handling up to 3 users without affecting performance.
+    2. The user shall not be able to close the web domain after it is opened.
+    3. The program shall be capable of handling up to 3 users without affecting performance.
 
 4. General Program
-    1. The program shall not steal any personal of the user.
-    2. The program will not cause any harm or changes to the users system.
+    1. The program shall not steal any personal information of the user.
+    2. The program will not cause any harm or changes to the users operating system.
 
  
