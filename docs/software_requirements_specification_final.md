@@ -13,9 +13,9 @@ This section contains functional and non-functional requirements for the main ca
 | :-------------: | :----------: |
 | FR1 | This phishing attack shall be sent in an email. |
 | FR2 | The email shall be from the fake cybersecurity service named "CyberProtect". |
-| FR3 | The phishing link will take the user to the CyberProtect website. |
-| FR4 | … |
-| FR5 | … |
+| FR3 | The phishing link shall take the user to the CyberProtect website. |
+| FR4 | The phishing link shall open in the safe exam browser. |
+| FR5 | The phishing email shall only be sent to cyberProtect's targeted users. |
 
 ### Cyber Protect Website
 | ID | Requirement |
@@ -58,11 +58,11 @@ This section contains functional and non-functional requirements for the main ca
 ### General Program
 | ID | Requirement |
 | :-------------: | :----------: |
-| NFR11  | The program shall not steal any personal information of the user. |
+| NFR11 | The program shall not steal any personal information of the user. |
 | NFR12 | The program will not cause any harm or changes to the users operating system. |
-| NFR13 | The program shall be adaptable to various sizes of computer screens.  |
+| NFR13 | The program shall be adaptable to various sizes of computer screens. |
 | NFR14 | Only developers shall be able to change the escape password. |
-| NFR15 | … |
+| NFR15 | The program shall not send the users video outsie of thier own device. |
 
 # Software Artifacts
 
