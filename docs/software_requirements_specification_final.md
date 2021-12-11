@@ -12,15 +12,15 @@ This section contains functional and non-functional requirements for the main ca
 | ID | Requirement |
 | :-------------: | :----------: |
 | FR1 | This phishing attack shall be sent in an email. |
-| FR2 | <Requirement 2> |
-| FR3 | <Requirement 3> |
+| FR2 | The email shall be from the fake cybersecurity service named "CyberProtect". |
+| FR3 | The phishing link will take the user to the Website. |
 | … | … |
 
 ### Cyber Protect Website
 | ID | Requirement |
 | :-------------: | :----------: |
-| FR4 | Website shall use HTML and Javascript. |
-| FR5 | The program shall turn on the user's camera and microphone. |
+| FR4 | The program shall turn on the user's microphone. |
+| FR5 | The program shall turn on the user's camera. |
 | FR6 | The website shall prompt the user to sing a portion of "Never Gonna Give You Up." |
 | FR7 | Only developers shall have the right to view user video and audio recorded by the program. |
 | FR8 | The website shall "Rick Roll" the user when they go to exit.
@@ -52,7 +52,7 @@ This section contains functional and non-functional requirements for the main ca
 | NFR7 | The user shall not be able to close the web domain after it is opened. |
 | NFR8 | The program shall be capable of handling up to 3 users without affecting performance. |
 | NFR9 | Users shall be prompted to enter first and last name in “giveaway” view. |
-| NFR10 | … |
+| NFR10 | The website shall be acccesable fully online on any laptop. |
 
 ### General Program
 | ID | Requirement |
