@@ -48,7 +48,7 @@ This section contains functional and non-functional requirements for the main ca
 
 This section contains all of the artifacts our team developed throughout the semester for this project. 
 
-* [https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/files/7697751/use_case.pdf](UML Diagram)
-* [https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/blob/12404237fa8145c2adb8ba7ba45944ef296338b9/artifacts/extended_description.txt](Extended Description)
-* [https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/files/7697753/Gantt.Chart.pdf](Gantt Chart)
-* [https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/blob/12404237fa8145c2adb8ba7ba45944ef296338b9/docs/HighLevelTasks.md](High Level Tasks)
+* [UML Diagram](https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/files/7697751/use_case.pdf)
+* [Extended Description](https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/blob/12404237fa8145c2adb8ba7ba45944ef296338b9/artifacts/extended_description.txt)
+* [Gantt Chart](https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/files/7697753/Gantt.Chart.pdf)
+* [High Level Tasks](https://github.com/noblenikkijo/GVSU-CIS350-TheAwesomeHackers/blob/1e183fc2b1ff9b971cf66b93ccade852cbbeb782/docs/HighLevelTasks.md)
