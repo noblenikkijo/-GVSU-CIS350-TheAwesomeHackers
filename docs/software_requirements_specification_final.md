@@ -13,26 +13,27 @@ This section contains functional and non-functional requirements for the main ca
 | :-------------: | :----------: |
 | FR1 | This phishing attack shall be sent in an email. |
 | FR2 | The email shall be from the fake cybersecurity service named "CyberProtect". |
-| FR3 | The phishing link will take the user to the Website. |
-| … | … |
+| FR3 | The phishing link will take the user to the CyberProtect website. |
+| FR4 | … |
+| FR5 | … |
 
 ### Cyber Protect Website
 | ID | Requirement |
 | :-------------: | :----------: |
-| FR4 | The program shall turn on the user's microphone. |
-| FR5 | The program shall turn on the user's camera. |
-| FR6 | The website shall prompt the user to sing a portion of "Never Gonna Give You Up." |
-| FR7 | Only developers shall have the right to view user video and audio recorded by the program. |
-| FR8 | The website shall "Rick Roll" the user when they go to exit.
+| FR6 | The program shall turn on the user's microphone. |
+| FR7 | The program shall turn on the user's camera. |
+| FR8 | The website shall prompt the user to sing a portion of "Never Gonna Give You Up." |
+| FR9 | Only developers shall have the right to view user video and audio recorded by the program. |
+| FR10 | The website shall "Rick Roll" the user when they go to exit.
 
 ### Safe Exam Browser (SEB)
 | ID | Requirement |
 | :-------------: | :----------: |
-| FR9  | The attack simulation shall be run on the Safe Exam Browser. |
-| FR10 | SEB shall open the Cyber Protect website on start. |
-| FR11 | SEB shall change the system volume to maximum. |
-| FR12 | SEB shall prevent the user from turning down the volume. |
-| FR13 | SEB shall require a password to exist the program. |
+| FR11  | The attack simulation shall be run on the Safe Exam Browser. |
+| FR12 | SEB shall open the Cyber Protect website on start. |
+| FR13 | SEB shall change the system volume to maximum. |
+| FR14 | SEB shall prevent the user from turning down the volume. |
+| FR15 | SEB shall require a password to exist the program. |
 
 ## Non-Functional Requirements
 
