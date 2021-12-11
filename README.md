@@ -18,5 +18,5 @@ Our intention with this project is to learn how to best defend against cyber sec
     * In general settings make “Start URL” this:
         https://cyber-protect.neocities.org 
     * Set unlock password to: thisTeamGetsAnA
-    * File -> Save Settings
-* Run Safe Exam Browse
+    * File -> *Save Settings*
+* Run Safe Exam Browser
