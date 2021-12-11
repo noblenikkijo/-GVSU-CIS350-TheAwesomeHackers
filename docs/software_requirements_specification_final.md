@@ -16,7 +16,7 @@ This is The Awesome Hacker's Software Requirements Specification divided up by s
     1. Only developers shall have the right to view user video and audio recorded by the program.
 
 4. General Program
-    1. The program shall utilize the java language
+    1. The program shall utilize the javascript and html language
     2. The program shall turn on the user’s camera and microphone
     3. The program shall change the system volume to maximum.
     4. The program shall prevent the user from turning down the volume.
