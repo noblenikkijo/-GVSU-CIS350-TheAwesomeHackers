@@ -51,15 +51,17 @@ This section contains functional and non-functional requirements for the main ca
 | NFR6 | Initial website view shall look like a legitamte giveaway. |
 | NFR7 | The user shall not be able to close the web domain after it is opened. |
 | NFR8 | The program shall be capable of handling up to 3 users without affecting performance. |
-| … | … |
+| NFR9 | Users shall be prompted to enter first and last name in “giveaway” view. |
+| NFR10 | … |
 
 ### General Program
 | ID | Requirement |
 | :-------------: | :----------: |
-| NFR9  | The program shall not steal any personal information of the user. |
-| NFR10 | The program will not cause any harm or changes to the users operating system. |
-| NFR11 | The program shall be adaptable to various sizes of computer screens.  |
-| … | … |
+| NFR11  | The program shall not steal any personal information of the user. |
+| NFR12 | The program will not cause any harm or changes to the users operating system. |
+| NFR13 | The program shall be adaptable to various sizes of computer screens.  |
+| NFR14 | Only developers shall be able to change the escape password. |
+| NFR15 | … |
 
 # Software Artifacts
 
